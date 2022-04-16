@@ -29,6 +29,10 @@ const Line = styled(motion.span)`
   width: 2px;
   height: 8rem;
   background-color: ${(props) => props.color};
+
+  @media (max-width: 48em) {
+    height: 2rem;
+  }
 `;
 
 const SocialIcons = (props) => {
@@ -49,6 +53,11 @@ const SocialIcons = (props) => {
   let iconWidth = 25;
   if (windowWidth < 768) {
     iconWidth = 20;
+  }
+
+  let lineHeight = "8rem";
+  if (windowWidth < 768) {
+    lineHeight = "2rem";
   }
 
   return (
@@ -124,7 +133,7 @@ const SocialIcons = (props) => {
 
       <Line
         initial={{ height: 0 }}
-        animate={{ height: "8rem" }}
+        animate={{ height: lineHeight }}
         transition={{ type: "spring", duration: 1, delay: 0.8 }}
         color={props.theme === "dark" ? darkTheme.text : darkTheme.body}
       />

@@ -44,8 +44,10 @@ const Main = styled.div`
   }
 
   @media (max-width: 48em) {
-    width: 75vw;
-    height: 35vh;
+    padding: 1rem;
+    max-width: calc(100vw - 8rem);
+    width: fit-content;
+    height: fit-content;
   }
 `;
 
@@ -54,6 +56,10 @@ const Title = styled.h2`
   justify-content: center;
   align-items: center;
   font-size: calc(1em + 1vw);
+
+  @media (max-width: 48em) {
+    font-size: calc(1em + 0.5vw);
+  }
 
   ${Main}:hover & {
     & > * {
@@ -73,6 +79,18 @@ const Description = styled.div`
 
   ${Main}:hover & {
     color: ${(props) => props.theme.body};
+  }
+
+  @media (max-width: 48em) {
+    font-size: calc(0.7em + 0.5vw);
+    padding: 0.1rem 0;
+    strong {
+      margin-bottom: 0.5rem;
+    }
+    ul,
+    p {
+      margin-left: 0.5rem;
+    }
   }
 
   strong {
